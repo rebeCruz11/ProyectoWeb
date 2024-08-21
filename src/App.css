@@ -1,11 +1,36 @@
 .App {
   text-align: center;
 }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: black;
+
+}
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+
+.rojo {
+  background-color: red;
+}
+.verde {
+  background-color: green;
+}
+.naranja {
+  color: #f95b14 ;
+
+}
+
+
+
+
+
+
+
+/* mi codigo pa arriba */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

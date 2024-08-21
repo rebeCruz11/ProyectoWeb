@@ -1,0 +1,93 @@
+.rojo {
+background-color: red;
+}
+.verde {
+background-color: green;
+}
+.naranja {
+color: #f95b14 ;
+
+}
+
+
+.header {
+background-color: rgb(245, 245, 245);
+padding: 20px;
+color: white;
+text-align: center;
+width: 100%;
+backdrop-filter: blur(45px);
+
+}
+
+.header a {
+    display: inline-block; /* Asegúrate de que el enlace se comporte como un elemento de bloque en línea */
+color: white;
+text-decoration: none;
+margin: 0 15px;
+font-size: 15px; /* Ajustar tamaño de letra */
+border: 2px solid transparent; /* Asegúrate de que el borde sea transparente por defecto */
+border-radius: 20px; /* Ajusta el borde redondeado */
+transition: border-color 0.3s; /* Añade una transición suave */
+
+}
+.header a:hover {
+    background-color: transparent; /* Asegúrate de que el fondo permanezca transparente */
+}
+
+.navbar-nav {
+display: flex;
+align-items: center;
+
+}
+
+.navbar-brand {
+display: flex;
+align-items: center;
+}
+
+.logo {
+height: 100px; /* Ajustar altura del logo */
+width: auto; /* Mantener proporción del logo */
+margin-right: 10px; /* Ajustar el margen derecho si es necesario */
+}
+
+.navbar-nav .nav-item {
+margin-left: 15px;
+display: inline;
+
+}
+
+.nav-link {
+line-height: 50px; /* Asegurar que el texto esté alineado con el logo */
+}
+/* Manejar los botones */
+.btn-custom-orange {
+    background-color: #e74d06;
+    border-color: #e74d06;
+    color: white;
+}
+
+.btn-custom-orange:hover {
+    background-color: #c74304; /* Un tono ligeramente más oscuro para el hover */
+    border-color: #c74304;
+}
+
+
+.btn-custom-header {
+    border-color: #e74d06;
+    color: white;
+    border: 2px solid transparent; /* Asegúrate de que el borde sea transparente por defecto */
+    border-radius: 20px; /* Ajusta el borde redondeado */
+    transition: border-color 0.3s; /* Añade una transición suave */
+}
+
+.btn-custom-header:hover {
+    background-color: #c74304; /* Un tono ligeramente más oscuro para el hover */
+    border-color: #c74304;
+}
+.active{
+    color:#f95b14;
+}
+
+

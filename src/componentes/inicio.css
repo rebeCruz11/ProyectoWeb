@@ -1,0 +1,181 @@
+.rojo {
+background-color: red;
+}
+.verde {
+background-color: green;
+}
+.naranja {
+color: #f95b14 ;
+}
+.inicio-section {
+    margin: 0;
+    padding: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Jost', sans-serif;
+    background: linear-gradient(to bottom, #000000, #250e03, #e74d06);
+    margin-top: -50px;
+}
+.fitness-section {
+    height: auto;
+}
+.bg-darkdark {
+    background-color: #000000;
+}
+.bg-difuminado {
+    background: linear-gradient(to bottom,  #250e03, #e74d06, #000000);
+
+}
+.bg-orange {
+    background-color: #e74d06;
+}
+
+.bg-dark {
+    background-color: #333;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-center h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.btn-outline-light {
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
+
+}
+.carousel-item img {
+    width: 100%;
+    height: 84vh; /* Ajusta este valor según lo necesites */
+    object-fit: cover;
+}
+
+.carousel {
+    margin-top: 60px; /* Ajusta según la altura del HEADER */
+}
+/*Seccion de ingredientes*/
+
+.ingredients-section h2,
+.ingredients-section h3 {
+    color: #fff;
+}
+
+.ingredients-section p {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.ingredients-section img {
+    margin-bottom: 20px;
+}
+
+.ingredients-section .row img {
+    max-height: 200px;
+}
+
+.ingredients-section .col-4 img {
+    max-height: 150px;
+}
+.btn-custom-orange {
+    background-color: #e74d06;
+    border-color: #e74d06;
+    color: white;
+    border-radius: 40px;
+}
+
+.btn-custom-orange:hover {
+    background-color: #c74304; /* Un tono ligeramente más oscuro para el hover */
+    border-color: #c74304;
+}
+/*Seccion de servicios*/
+.service-section {
+    padding: 50px 0;
+    background-color: #000000;
+}
+.service-box {
+    border: 2px solid #FF4500;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #1a1a1a;
+    color: white;
+}
+.service-box img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+.section-title {
+    color: #FF4500;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+.service-box h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.service-box p {
+    font-size: 0.9rem;
+}
+/*planes*/
+
+.pricing-table {
+    background: #000000;
+    background-size: cover;
+    padding: 60px 0;
+
+}
+.pricing-card {
+    border-radius: 25px;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    min-height: 400px;
+
+
+}
+.pricing-card:hover {
+    transform: translateY(-10px);
+    border: 2px solid #FF4500;
+
+}
+.card-header {
+    background-color:  #FF4500;
+    color: rgb(0, 0, 0);
+    border-radius: 25px 25px 0 0;
+    padding: 25px;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid #FF4500;
+
+}
+.card-body {
+    padding: 40px 30px;
+    text-align: center;
+        border: 2px solid #FF4500;
+
+}
+.price {
+    font-size: 2.5em;
+    color: #ffffff;
+    font-weight: bold;
+}
+.btn-select {
+    background-color: #5060FF;
+    color: rgb(238, 93, 9);
+    border-radius: 50px;
+    padding: 12px 35px;
+    margin-top: 20px;
+}
+.bor {
+    border: 2px solid #FF4500;
+}
+
