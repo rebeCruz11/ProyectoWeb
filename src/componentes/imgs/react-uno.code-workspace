@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../../../Escritorio/CodeJob_Maquetacion"
+		},
+		{
+			"path": "D:/Downloads/ProyectoWeb-master/ProyectoWeb-master"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "ProyectoWeb-master"
+	}
+}

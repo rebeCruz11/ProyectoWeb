@@ -8,6 +8,8 @@ import { PAGINA } from './componentes/inicio';
 import {HEADER} from './componentes/header';
 import { LOGIN } from './componentes/login';
 import { Footer } from './componentes/footer';
+import Rutinas from './componentes/rutinas';
+
 
 
 
@@ -23,6 +25,7 @@ function App() {
           <Route path="/cart" element={<SEGUNDAPRUEBA/>} />
           {/* Agrega más rutas según sea necesario */}
           <Route path="/login" element={<LOGIN/>} />
+          <Route path="/rutinas" element={<Rutinas/>} />
         </Routes>
       </main>
     </div>
