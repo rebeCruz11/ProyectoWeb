@@ -1,0 +1,214 @@
+body{
+    background-color: #000000;
+
+}
+.rojo {
+    background-color: red;
+    }
+    .verde {
+    background-color: green;
+    }
+    .naranja {
+    color: #f95b14 ;
+    }
+    .inicio-section {
+        margin: 0;
+        padding: 110px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Jost', sans-serif;
+        background: black;
+        margin-top: -50px;
+    }
+
+    .bg-darkdark {
+        background-color: #000000;
+    }
+    .bg-difuminado {
+        background: linear-gradient(to bottom,  #250e03, #e74d06, #000000);
+    
+    }
+    .bg-orange {
+        background-color: #e74d06;
+    }
+    
+    .bg-dark {
+        background-color: #333;
+    }
+    
+    .text-white {
+        color: white;
+    }
+    
+    .text-center h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+.bor {
+    border: 2px solid #FF4500;
+}
+/*Parte de inicio*/
+.greeting h2 {
+    margin-bottom: 0;
+}
+
+.greeting p {
+    margin-top: 0;
+    color: #ffffff;
+    
+}
+
+.search-box input {
+    border-radius: 20px;
+    padding: 25px;
+    border: 2px solid #FF4500;
+    background-color: #000000;
+
+
+}
+
+.welcome-box {
+    background-color: #000000;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #FF4500;
+}
+
+.welcome-box h5 {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.welcome-box p {
+    margin-bottom: 0;
+    color: #f0f0f0;
+}
+
+.ongoing-projects h4 {
+    margin-bottom: 20px;
+    font-weight: bold;
+
+}
+
+.project-card {
+    background-color: #000000;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.7s;
+    border: 2px solid #FF4500;
+
+
+}
+
+.project-card .date {
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.project-card h5 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.project-card:hover {
+    transform: translateY(-15px);
+    border: 2px solid #FF4500;
+
+}
+.project-card .category {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.progress {
+
+    background-color: #000000;
+}
+
+.progress-bar {
+    background-color: #FF4500;
+}
+
+/*INicio*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+
+.cards {
+display: grid;
+grid-template-columns: repeat(1, 1fr);
+margin: auto;
+width: 100%;
+max-width: 1200px;
+grid-gap: 24px;
+padding: 80px; 
+}
+
+@media (min-width: 540px) {
+.cards {
+    grid-template-columns: repeat(2, 1fr);
+
+}
+}
+
+@media (min-width: 960px) {
+.cards {
+    grid-template-columns: repeat(4, 1fr);
+}
+}
+
+.card {
+position: relative;
+padding-bottom: 150%;
+border-radius: 30px;
+border: 2px solid #FF4500;
+
+
+}
+
+.card-background {
+background-size: cover;
+background-position: center;
+position: absolute;
+left: 0; top: 0; right: 0; bottom: 0;
+border-radius: 24px;
+filter: brightness(.75) saturate(1.2) contrast(.85);
+transition: .3s;
+}
+
+.card-content {
+position: absolute;
+padding: 24px;
+font-family: arial, sans-serif;
+color: white;
+}
+
+.card-content p {
+color: rgba(255, 255, 255, .6);
+margin-bottom: 10px;
+text-transform: uppercase;
+font-size: .9rem;
+}
+
+.card-content h3 {
+font-size: 1.9rem;
+color: rgba(255, 255, 255, .9);
+text-shadow: 2px 2px 20px rgba(0, 0, 0, .2);
+}
+
+.card:hover .card-background {
+transform: scale(1.05);
+}
+
+.cards:hover > .card:not(:hover) > .card-background {
+filter: brightness(.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+    

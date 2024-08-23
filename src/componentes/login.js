@@ -15,7 +15,7 @@ export const LOGIN = () => {
                             <input className= 'cajas' type="text" name="txt" placeholder="Tú Nombre" required />
                             <input className= 'cajas' type="email" name="email" placeholder="Correo" required />
                             <input className= 'cajas' type="password" name="pswd" placeholder="Contraseña" required />
-                            <Link to="/" className='ajustarB1'>Registrarse</Link>
+                            <Link to="/inicioApp" className='ajustarB1'>Registrarse</Link>
                         </form>
                     </div>
                     <div className="login">
@@ -23,7 +23,7 @@ export const LOGIN = () => {
                             <label className='ajustar' htmlFor="chk" aria-hidden="true">Inicio</label>
                             <input className= 'cajas2' type="email" name="email" placeholder="Correo" required />
                             <input className= 'cajas2' type="password" name="pswd" placeholder="Contraseña" required />
-                            <Link to="/" className='ajustarB2'>Iniciar</Link>
+                            <Link to="/inicioApp" className='ajustarB2'>Iniciar</Link>
                         </form>
                     </div>
                 </div>

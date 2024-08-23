@@ -6,6 +6,8 @@ export const PAGINAINICIO = () => {
     let nombre = "Proyecto";
     let web = "nuestroProyecto.com";
 
+    let jijiji= "jiijPrueba del commit"
+
     let intereses = [
         "intereses 1", 
         "intereses 1", 
