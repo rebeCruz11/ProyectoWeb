@@ -1,6 +1,6 @@
 import React from "react";
 import './rutinas.css';
-import boxing from '../componentes/imgs/bboxing.jpg';
+import boxing from '../componentes/imgs/boxing.jpg';
 import espalda from '../componentes/imgs/espalda.jpg';
 import saltar from '../componentes/imgs/saltarCuerda.jpg';
 import runner from '../componentes/imgs/runner.jpg';

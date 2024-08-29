@@ -5,40 +5,32 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { PAGINAINICIO } from './componentes/primercomponente';
 import { SEGUNDAPRUEBA } from './componentes/segundocomponente';
 import { PAGINA } from './componentes/inicio';
-import {HEADER} from './componentes/header';
+import { HEADER } from './componentes/header';
 import { LOGIN } from './componentes/login';
 import { Footer } from './componentes/footer';
-import { HEADERAPP } from './componentes/headerApp';
-import { INICIOAPP } from './componentes/inicioApp';
+import { PERFIL } from './componentes/perfil';
 import Rutinas from './componentes/rutinas';
-import { COMENTARIOS } from './componentes/comentarios';
-
-
-
-
+import Testimonio from './componentes/testimonio';
 
 function App() {
   return (
     <Router>
-    <div>
-      <main>
-        <Routes>
-          <Route exact path="/" element={<PAGINA />} />
-          <Route path="/users" element={<LOGIN />} />
-          <Route path="/cart" element={<SEGUNDAPRUEBA/>} />
-          {/* Agrega más rutas según sea necesario */}
-          <Route path="/login" element={<LOGIN/>} />
-          <Route path="/inicioApp" element={<INICIOAPP/>} />
-          <Route path="/rutinas" element={<Rutinas/>} />
-          <Route path="/comentarios" element={<COMENTARIOS/>} />
-        </Routes>
-      </main>
-    </div>
-  </Router>
+      <div>
+        <main>
+          <Routes>
+            <Route exact path="/" element={<PAGINA />} />
+            <Route path="/users" element={<PERFIL />} />
+            <Route path="/cart" element={<SEGUNDAPRUEBA />} />
+            <Route path="/login" element={<LOGIN />} />
+            <Route path="/inicio" element={<PAGINAINICIO />} />
+            <Route path="/rutinas" element={<Rutinas />} />
+            <Route path="/testimonio" element={<Testimonio />} />
+            {/* Agrega más rutas según sea necesario */}
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 
 export default App;
-
-
-
