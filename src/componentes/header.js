@@ -26,7 +26,7 @@ export const HEADER = () => {
                                 <a class="btn btn-custom-header" href="/"> Inicio </a>
                             </li>
                             <li class="navbar-item">
-                                <a class="btn btn-custom-header" href="/users"> Rutinas </a>
+                                <a class="btn btn-custom-header" href="/rutinas"> Rutinas </a>
                             </li>
                             <li class="navbar-item">
                                 <a class="btn btn-custom-header" href="/cart"> Planes </a>
@@ -37,6 +37,7 @@ export const HEADER = () => {
                             <li class="navbar-item">
                                 <a class="btn btn-custom-header" href="/cart"> Contáctanos </a>
                             </li>
+                            
                             <li class="navbar-item">
                                 <a class="btn btn-custom-orange" href="/login"> Iniciar sesión </a>
                             </li>
