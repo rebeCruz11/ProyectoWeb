@@ -1,0 +1,177 @@
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Asegura que abarque toda la pantalla */
+    overflow: hidden; /* Esconde cualquier parte de la imagen que se salga del contenedor */
+    margin: 0%;
+    padding: 0%;
+}
+
+.banner-container img {
+    margin-top: 90px;
+    width: 1516px;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex; /* Centra el contenido */
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+}
+
+.banner-overlay img:hover {
+    
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+}
+
+.banner-overlay img {
+    width: 650px;
+    height: 500px;
+    margin-right: 0px;
+    margin-top: 0px;
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.banner-title {
+    color:  #c44d16;
+    text-align:start;
+    padding: 20px;
+    font-size: 50px;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0; /* Elimina márgenes */
+    max-width: 600px;
+    margin-right: 15%;
+    transition: color 0.5s; /* Transición suave para el color */
+}
+
+.banner-title:hover {
+    color:  #ffffff; /* Color rojo al pasar el mouse */
+}
+
+.titles{
+    color:  #d5d5d5;
+    transition: color 0.5s; /* Transición suave para el color */
+    margin-left: 34%;
+   
+}
+
+.titles:hover {
+    color:  #c44d16; /* Color rojo al pasar el mouse */
+}
+
+
+.contenedor2 {
+    margin-top: 3%;
+    margin-left: 20px;
+    position: relative; /* Asegura que el pseudo-elemento se posicione en relación a este contenedor */
+    background-color:none;
+    width: 300px; /* Ajusta el ancho del contenedor al ancho de la imagen */
+    height: 400px; /* Ajusta la altura del contenedor a la altura de la imagen */
+    border-radius: 10px; /* Aplica el redondeado al contenedor */
+    overflow: hidden; /* Oculta cualquier contenido que se salga del contenedor */
+}
+
+.contenedor2 img {
+   
+    display: block;
+    width: 100%; /* Hace que la imagen se ajuste al ancho del contenedor */
+    height: 100%; /* Hace que la imagen se ajuste a la altura del contenedor */
+    border-radius: 10px; /* Redondea los bordes de la imagen */
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.card-title{
+    position: absolute; 
+    color: #f4f0ed;
+    text-align:start;
+    padding: 20px;
+    font-size: 25px;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0; /* Elimina márgenes */
+    max-width: 700px;
+    margin-right: 10%;
+    margin-top: 70%;
+    z-index: 2; /* Asegura que el texto esté por encima del pseudo-elemento */
+}
+
+.card-subtitle{
+    position: absolute; 
+    justify-content: center;
+    color: #f4f0ed;
+    text-align:start;
+    padding: 20px;
+    font-size: 15px;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0; /* Elimina márgenes */
+    max-width: 700px;
+    
+    margin-top: 85%;
+    z-index: 2; /* Asegura que el texto esté por encima del pseudo-elemento */
+}
+
+
+.contenedor2::after {
+    content: ''; /* Inserta el contenido vacío necesario para el pseudo-elemento */
+    position: absolute; /* Posiciona el pseudo-elemento en relación al contenedor */
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 50%; /* Cubre solo la mitad superior de la imagen */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con 50% de transparencia */
+    border-top-left-radius: 20px; /* Aplica el redondeado en la parte inferior */
+    border-top-right-radius: 20px; /* Aplica el redondeado en la parte inferior */
+    pointer-events: none; /* Permite que la imagen sea clickeable */
+}
+
+.contenedor2 img:hover {
+    
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+}
+.contenedor-cards{
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-inferior{
+    margin-top: 5%;
+    background-color: black;
+}
+
+.body{
+    background-color: black;
+}
+
+.contenedor3{
+    background-color: #c44d16;
+    max-width: 100%;
+    height: 20%;
+    margin-top: 5%;
+    display: flex;
+    
+}
+
+.contenedor3 imag{
+    
+    width: 5%;
+    height: 5%;
+    
+}
+
+.text-nutris{
+    max-width: 50%;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+
+
+

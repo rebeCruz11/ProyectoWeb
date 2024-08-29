@@ -9,6 +9,7 @@ import {HEADER} from './componentes/header';
 import { LOGIN } from './componentes/login';
 import { Footer } from './componentes/footer';
 import Rutinas from './componentes/rutinas';
+import Testimonio from './componentes/testimonio';
 
 
 
@@ -26,6 +27,13 @@ function App() {
           {/* Agrega más rutas según sea necesario */}
           <Route path="/login" element={<LOGIN/>} />
           <Route path="/rutinas" element={<Rutinas/>} />
+          <Route path="/testimonio" element={<Testimonio/>} />
+          
+
+          
+          
+          
+          
         </Routes>
       </main>
     </div>

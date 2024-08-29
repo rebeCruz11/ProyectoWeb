@@ -19,6 +19,17 @@ import { Footer } from './footer.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
+import { Link } from 'react-router-dom';
+
+import { NavLink } from 'react-router-dom';
+
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+
+
+
+
 
 
 export const PAGINA = () => {
@@ -153,10 +164,13 @@ export const PAGINA = () => {
             <section class="bg-orange text-light p-5">
                 <div class="container">
                     <div class="d-flex justify-content-center">
-                        <h2 class="p-3">Tenemos las mejores ofertas para ti</h2>
-                        <div class="input-group w-50">
-                        <button className="btn btn-outline-light">Inscríbete</button>
-                        </div>
+                        <h2 class="p-3">Contamos con cientos de testimonios de nuestros clientes</h2>
+                        <div className="input-group w-50">
+                            <NavLink to="/testimonio" className="btn btn-outline-light w-50 h-50 mt-3">
+                                Ver
+                            </NavLink>
+                            </div>
+                        
                     </div>
                 </div>
             </section>
