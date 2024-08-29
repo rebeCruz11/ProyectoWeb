@@ -23,22 +23,22 @@ export const HEADERAPP = () => {
                     <div class="collapse navbar-collapse " id="navbar-start">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
                             <li class="navbar-item">
-                                <a class="btn btn-custom-header" href="/"> Inicio </a>
+                                <a class="btn btn-custom-header" href="/inicioApp"> Inicio </a>
                             </li>
                             <li class="navbar-item">
-                                <a class="btn btn-custom-header" href="/users"> Mis rutinas </a>
+                                <a class="btn btn-custom-header" href="/rutinas"> Mis rutinas </a>
                             </li>
                             <li class="navbar-item">
                                 <a class="btn btn-custom-header" href="/cart"> Mis planes </a>
                             </li>
                             <li class="navbar-item">
-                                <a class="btn btn-custom-header" href="/cart"> Mis servicios </a>
+                                <a class="btn btn-custom-header" href="/comentarios"> Mis servicios </a>
                             </li>
                             <li class="navbar-item">
                                 <a class="btn btn-custom-header" href="/cart"> Mi perfil </a>
                             </li>
                             <li class="navbar-item">
-                                <a class="btn btn-custom-orange" href="/login"> Cerrar sesión </a>
+                                <a class="btn btn-custom-orange" href="/"> Cerrar sesión </a>
                             </li>
 
                         </ul>

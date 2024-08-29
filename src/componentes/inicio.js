@@ -79,7 +79,7 @@ export const PAGINA = () => {
                     </div>
                 </div>
             </section>
-            <section className="container-fluid">
+            <section id= "rutinas" className="container-fluid">
                 <div className="row no-gutters">
                     <div className="col-md-6 d-flex align-items-center justify-content-center bg-orange">
                         <div className="text-center text-white">

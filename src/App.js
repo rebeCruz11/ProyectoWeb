@@ -10,6 +10,9 @@ import { LOGIN } from './componentes/login';
 import { Footer } from './componentes/footer';
 import { HEADERAPP } from './componentes/headerApp';
 import { INICIOAPP } from './componentes/inicioApp';
+import Rutinas from './componentes/rutinas';
+import { COMENTARIOS } from './componentes/comentarios';
+
 
 
 
@@ -26,6 +29,8 @@ function App() {
           {/* Agrega más rutas según sea necesario */}
           <Route path="/login" element={<LOGIN/>} />
           <Route path="/inicioApp" element={<INICIOAPP/>} />
+          <Route path="/rutinas" element={<Rutinas/>} />
+          <Route path="/comentarios" element={<COMENTARIOS/>} />
         </Routes>
       </main>
     </div>
