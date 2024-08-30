@@ -5,6 +5,7 @@ import './header.css';
 import { NavLink } from 'react-router-dom';
 
 
+
 export const HEADER = () => {
     return(
         <header className="header">
@@ -26,18 +27,20 @@ export const HEADER = () => {
                                 <a class="btn btn-custom-header" href="/"> Inicio </a>
                             </li>
                             <li class="navbar-item">
-                                <a class="btn btn-custom-header" href="/rutinas"> Rutinas </a>
+                                <a class="btn btn-custom-header" href="/#rutinas"> Rutinas </a>
                             </li>
                             <li class="navbar-item">
-                                <a class="btn btn-custom-header" href="/cart"> Planes </a>
+                                <a class="btn btn-custom-header" href="/#servicios"> Servicios </a>
                             </li>
                             <li class="navbar-item">
-                                <a class="btn btn-custom-header" href="/cart"> Servicios </a>
+                                <a class="btn btn-custom-header" href="/#planes"> Planes </a>
                             </li>
                             <li class="navbar-item">
-                                <a class="btn btn-custom-header" href="/cart"> Contáctanos </a>
+                                <a class="btn btn-custom-header" href="/#contacto"> Contáctanos </a>
                             </li>
-                            
+                            <li class="navbar-item">
+                                <a class="btn btn-custom-header" href="/testimonio"> Testimonios </a>
+                            </li>
                             <li class="navbar-item">
                                 <a class="btn btn-custom-orange" href="/login"> Iniciar sesión </a>
                             </li>

@@ -1,95 +1,108 @@
-import React from 'react';
-import { SEGUNDAPRUEBA } from './segundocomponente';
+import React, { useEffect } from 'react';
 import './comentarios.css';
-import { HEADERAPP } from './headerApp.js';
-import about from './images/mujer.avif';
-import { Footer } from './footer.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import comida1 from './images/comida1.png';
-import comida2 from './images/comida2.png';
-import comida3 from './images/comida3.png';
-import comida4 from './images/comida4.png';
-import comida5 from './images/comida5.png';
-import { Container, Row, Col, Card, Form, InputGroup } from 'react-bootstrap';
-import { Search, Phone, Grid } from 'react-bootstrap-icons';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { HEADERAPP } from './headerApp.js';
 
-export const COMENTARIOS = () => {
+const Comments = () => {
+    useEffect(() => {
+        mostrarComentarios();
+
+        // Usar una función separada para manejar el envío del formulario
+        const handleFormSubmit = (event) => {
+            event.preventDefault(); // Evita el envío del formulario
+
+            // Obtén los valores del formulario
+            const nombre = document.getElementById('nombre').value;
+            const comentario = document.getElementById('comentario').value;
+            const fecha = new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            // Crea un objeto para representar el comentario
+            const comentarioObj = {
+                nombre,
+                comentario,
+                fecha,
+            };
+
+            // Guarda el comentario en localStorage
+            const comentariosGuardados = JSON.parse(localStorage.getItem('comentarios')) || [];
+            comentariosGuardados.push(comentarioObj);
+            localStorage.setItem('comentarios', JSON.stringify(comentariosGuardados));
+
+            // Actualiza la lista de comentarios
+            mostrarComentarios();
+
+            // Limpia los campos del formulario
+            form.reset();
+        };
+
+        // Añadir event listener una sola vez
+        const form = document.getElementById('comment-form');
+        form.addEventListener('submit', handleFormSubmit);
+
+        // Limpiar el event listener cuando el componente se desmonta
+        return () => {
+            form.removeEventListener('submit', handleFormSubmit);
+        };
+    }, []);
+
+    // Función para mostrar los comentarios almacenados en localStorage
+    const mostrarComentarios = () => {
+        const comentariosGuardados = JSON.parse(localStorage.getItem('comentarios')) || [];
+        const commentsContainer = document.getElementById('comments-container');
+        commentsContainer.innerHTML = ''; // Limpia el contenedor antes de agregar los comentarios
+
+        comentariosGuardados.forEach((comentario) => {
+            const newComment = document.createElement('div');
+            newComment.className = 'card mb-3';
+            newComment.innerHTML = `
+                <div class="card-header bg-naranja text-white">
+                    <strong>${comentario.nombre}</strong>
+                </div>
+                <div class="card-body bg-black">
+                    <p class="card-text text-white">${comentario.comentario}</p>
+                </div>
+                <div class="card-footer text-white bg-black">
+                    <small>Publicado el ${comentario.fecha}</small>
+                </div>
+            `;
+            commentsContainer.appendChild(newComment);
+        });
+    };
+
     return (
         <div>
             <HEADERAPP />
-            <section class="container p-5">
-            <div class="p-5">
-                <div class="text-center mb-3 p-5">
-                    <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Comentarios</h6>
-                    <h1>Opiniones de nuestros clientes</h1>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="card mb-3" id="comments-container">
-                            <div class="card mb-3">
-                            <div class="card-header">
-                                <strong>Marta Zuniga</strong>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">Excelente experiencia de vuelo con la aerolínea XYZ. El servicio a bordo fue excepcional y el personal muy amable.</p>
-                            </div>
-                            <div class="card-footer text-muted">
-                                <small>Publicado el 31 de Mayo, 2024</small>
-                            </div>
-                            </div>
-                            <div class="card mb-3">
-                            <div class="card-header">
-                                <strong>Jorge Zavaleta</strong>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">Me encantó el vuelo. Los asientos eran cómodos y el entretenimiento a bordo fue genial. Definitivamente volveré a volar con ellos.</p>
-                            </div>
-                            <div class="card-footer text-muted">
-                                <small>Publicado el 30 de Mayo, 2024</small>
-                            </div>
-                            </div>
-                            <div class="card mb-3">
-                            <div class="card-header">
-                                <strong>Susan Caceres</strong>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">Me encantó el vuelo. Los asientos eran cómodos y el entretenimiento a bordo fue genial y la comida me encanto. Definitivamente volveré a volar con ellos.</p>
-                            </div>
-                            <div class="card-footer text-muted">
-                                <small>Publicado el 30 de Mayo, 2024</small>
-                            </div>
+            <section className="container p-5">
+                <div className="p-5">
+                    <div className="text-center mb-3 p-5">
+                        <h1>Opiniones de nuestros clientes</h1>
+                    </div>
+                    <div className="row justify-content-center">
+                        <div className="col-md-8">
+                            <div className="card mb-3" id="comments-container"></div>
+                            <div className="card bg-black">
+                                <div className="card-body ">
+                                    <h5 className="card-title text-white">Agregar Comentario</h5>
+                                    <form id="comment-form">
+                                        <div className="mb-3">
+                                            <label htmlFor="nombre" className="form-label">Nombre</label>
+                                            <input type="text" className="form-control ajustarNombre" id="nombre" placeholder="Ingrese su nombre" />
+                                        </div>
+                                        <div className="mb-3">
+                                            <label htmlFor="comentario" className="form-label">Comentario</label>
+                                            <textarea className="form-control" id="comentario" rows="4" placeholder="Escriba su comentario"></textarea>
+                                        </div>
+                                        <button id="boton-enviar" type="submit" className="ajustarB2">Enviar Comentario</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="card">
-                            <div class="card-body">
-                            <h5 class="card-title">Agregar Comentario</h5>
-                            <form id="comment-form">
-                                <div class="mb-3">
-                                <label for="nombre" class="form-label">Nombre</label>
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="Ingrese su nombre"
-                                    id="nombre"
-                                    onClick={(e) => {
-                                        e.target.style.backgroundColor = "black";
-                                        e.target.style.color = "white";
-                                    }}
-                                />
-                                </div>
-                                <div class="mb-3">
-                                <label for="comentario" class="form-label">Comentario</label>
-                                <textarea class="form-control" id="comentario" rows="4" placeholder="Escriba su comentario"></textarea>
-                                </div>
-                                <button id="boton-enviar" type="submit" class="btn btn-primary">Enviar Comentario</button>
-                            </form>
-                            </div>
-                        </div>                      
-                    </div>
                     </div>
                 </div>
-            </section>            
+            </section>
         </div>
     );
 };
+
+export default Comments;

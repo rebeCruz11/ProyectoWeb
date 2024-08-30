@@ -29,13 +29,10 @@ export const HEADERAPP = () => {
                                 <a class="btn btn-custom-header" href="/rutinas"> Mis rutinas </a>
                             </li>
                             <li class="navbar-item">
-                                <a class="btn btn-custom-header" href="/cart"> Mis planes </a>
+                                <a class="btn btn-custom-header" href="/comentarios"> Comentarios </a>
                             </li>
                             <li class="navbar-item">
-                                <a class="btn btn-custom-header" href="/comentarios"> Mis servicios </a>
-                            </li>
-                            <li class="navbar-item">
-                                <a class="btn btn-custom-header" href="/cart"> Mi perfil </a>
+                                <a class="btn btn-custom-header" href="/users"> Mi perfil </a>
                             </li>
                             <li class="navbar-item">
                                 <a class="btn btn-custom-orange" href="/"> Cerrar sesión </a>

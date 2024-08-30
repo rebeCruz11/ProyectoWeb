@@ -1,20 +1,20 @@
-.body{
+.body-rutinas {
   background-color:  #000000;
 }
-.banner-container {
+
+.banner-container-rutinas {
   position: relative;
   width: 100%;
   margin-bottom: 20px;
   margin-top: 5%;
 }
 
-
-.banner-container img {
+.banner-container-rutinas img {
   width: 100%;
   height: auto;
 }
 
-.banner-overlay {
+.banner-overlay-rutinas {
   position: absolute;
   top: 0;
   left: 0;
@@ -22,10 +22,10 @@
   height: 100%;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.banner-title {
+.banner-title-rutinas {
   color: #f4f0ed;
   text-align: center;
   padding: 20px;
@@ -34,74 +34,65 @@
   margin-top: 25%;
 }
 
-.banner-subtitle {
+.banner-subtitle-rutinas {
   color: #f0e7e7;
   margin-top: 30px;
   font-size: 20px;
-  margin-top: 60px;
   margin-bottom: 60px;
-  margin-left: 33% ;
- 
+  margin-left: 33%;
 }
 
-.card-custom {
+.card-custom-rutinas {
   background-color: #f95b14;
   width: 15rem;
-  height: 30rem;
+  height: 26rem;
+  margin-left: 20px;
 }
 
-.card-img {
-  height: auto;
-  width: 15rem;
-}
-
-.btn-custom {
-  margin-bottom: 10px;
+.card-img-rutinas {
+  height: 35%;
+  width: auto;
 }
 
 
-.coach1 {
+.coach1-rutinas {
   display: flex;
-  justify-content: flex-start; /* Ajustado a flex-start para que el contenido se alinee a la izquierda */
-  align-items: center; /* Cambiado a center para alinear verticalmente */
-  gap: 5px; /* Reducido el espacio entre la imagen y el texto */
-  /* margin-left: 200px; */ /* Comentado para evitar que el contenido se empuje hacia la derecha */
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
 }
 
-.coach1 img {
+.coach1-rutinas img {
   width: 100%; 
   max-width: 60%; 
   margin-left: 50%;
   margin-bottom: 5px;
 }
 
-.coach2 {
-display: flex;
-justify-content: flex-start; /* Ajustado a flex-start para que el contenido se alinee a la izquierda */
-align-items: center; /* Cambiado a center para alinear verticalmente */
-gap: 5px; /* Reducido el espacio entre la imagen y el texto */
-/* margin-left: 200px; */ /* Comentado para evitar que el contenido se empuje hacia la derecha */
+.coach2-rutinas {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
 }
 
-.coach2 img {
-width: 100%; 
-max-width: 90%; 
-margin-left: 60%;
-margin-bottom: 5px;
+.coach2-rutinas img {
+  width: 100%; 
+  max-width: 90%; 
+  margin-left: 60%;
+  margin-bottom: 5px;
 }
 
-.textoC1 {
+.textoC1-rutinas {
   position: absolute;
   margin-right: 28%;
-  color:#f0e7e7;
+  color: #f0e7e7;
   margin-left: 20%;
 }
 
-.iconos
-{
-
- display: flex;
- justify-content: center;
+.iconos-rutinas {
+  display: flex;
+  justify-content: center;
   margin-right: 8%;
   max-width: 100%; 
   margin-bottom: 5%;
@@ -109,70 +100,50 @@ margin-bottom: 5px;
   margin-right: 18%;
 }
 
-.iconos img{
-width: 50px;
-height: 50px;
+.iconos-rutinas img {
+  width: 50px;
+  height: 50px;
 }
 
-.contenedor2
-{
-
-display: flex;
-justify-content: center;
-align-items:flex-start;
+.contenedor2-rutinas {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.contenedor2 img
-{
-width: 50px;
-height: 50px;
+.contenedor2-rutinas img {
+  width: 50px;
+  height: 50px;
 }
 
-.contenedor3
-{
-width: 100%;
-height: 25% ;
-background-color:  #f95b14;
-display: flex;
-
+.contenedor3-rutinas {
+  width: 100%;
+  height: 25%;
+  background-color: #f95b14;
+  display: flex;
 }
 
-
-.letraIcono{
-
-margin-top: 5%;
-color: black;
+.letraIcono-rutinas {
+  margin-top: 5%;
+  color: black;
 }
 
-.letraIcono2{
-
-margin-top: 8%;
-color: black;
-}
-.contenedor22{
-display: flex;
-
+.letraIcono2-rutinas {
+  margin-top: 8%;
+  color: black;
 }
 
-.title{
-
-justify-content: center;
-color: #dfd2d2;
+.contenedor22-rutinas {
+  display: flex;
 }
 
-.mancuernas2{
-height: 100px;
-width: 100px;
-max-width: 100%;
+.title-rutinas {
+  justify-content: center;
+  color: #dfd2d2;
 }
 
-
-
-
-
-
-
-
-
-
-
+.mancuernas2-rutinas {
+  height: 100px;
+  width: 100px;
+  max-width: 100%;
+}

@@ -15,7 +15,7 @@ export const LOGIN = () => {
                             <input className= 'cajas' type="text" name="txt" placeholder="Tú Nombre" required />
                             <input className= 'cajas' type="email" name="email" placeholder="Correo" required />
                             <input className= 'cajas' type="password" name="pswd" placeholder="Contraseña" required />
-                            <Link to="/inicioApp" className='ajustarB1'>Registrarse</Link>
+                            <Link to="/pagar" className='ajustarB1'>Registrarse</Link>
                         </form>
                     </div>
                     <div className="login">

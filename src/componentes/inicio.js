@@ -104,7 +104,7 @@ export const PAGINA = () => {
                     </div>
                 </div>
             </section>
-            <section class="ingredients-section text-center py-5 bg-darkdark">
+            <section id="servicios" class="ingredients-section text-center py-5 bg-darkdark">
             <div class="container service-section">
                 <h2 class="section-title">Nuestros principales servicios</h2>
                 <div class="row">
@@ -164,8 +164,8 @@ export const PAGINA = () => {
             <section class="bg-orange text-light p-5">
                 <div class="container">
                     <div class="d-flex justify-content-center">
-                        <h2 class="p-3">Contamos con cientos de testimonios de nuestros clientes</h2>
-                        <div className="input-group w-50">
+                        <h2 class="p-3">Testimonios de nuestros clientes</h2>
+                        <div className="input-group w-50 ml-5 ">
                             <NavLink to="/testimonio" className="btn btn-outline-light w-50 h-50 mt-3">
                                 Ver
                             </NavLink>
@@ -174,7 +174,7 @@ export const PAGINA = () => {
                     </div>
                 </div>
             </section>
-            <section class="ingredients-section text-center py-5 bg-darkdark text-white">
+            <section id="planes" class="ingredients-section text-center py-5 bg-darkdark text-white">
                 <div class="container pricing-table ">
                     <div class="row text-center">
                         <h3 class="mb-5">Nuestros planes</h3>
@@ -186,7 +186,6 @@ export const PAGINA = () => {
                                     BASICO
                                 </div>
                                 <div class="card-body bg-difuminado text-white">
-                                    <h5 class="card-title">Económico</h5>
                                     <p class="price">$9.99<span><br/>/mes</span></p>
                                     <div class="p-5">
                                     <a href="#" class="btn btn-outline-light">Seleccionar</a>
@@ -202,7 +201,6 @@ export const PAGINA = () => {
                                     PREMIUM
                                 </div>
                                 <div class="card-body bg-difuminado text-white">
-                                    <h5 class="card-title">Intermedio</h5>
                                     <p class="price">$19.99<span><br/>/mes</span></p>
                                     <div class="p-5">
                                     <a href="#" class="btn btn-outline-light">Seleccionar</a>
@@ -218,7 +216,6 @@ export const PAGINA = () => {
                                     PRO
                                 </div>
                                 <div class="card-body bg-difuminado text-white">
-                                    <h5 class="card-title">Especial</h5>
                                     <p class="price">$29.99<span><br/>/mes</span></p>
                                     <div class="p-5">
                                     <a href="#" class="btn btn-outline-light">Seleccionar</a>
@@ -234,7 +231,6 @@ export const PAGINA = () => {
                                     ULTRA
                                 </div>
                                 <div class="card-body bg-difuminado text-white">
-                                    <h5 class="card-title">Todo incluido</h5>
                                     <p class="price">$39.99<span><br/>/mes</span></p>
                                     <div class="p-5">
                                     <a href="#" class="btn btn-outline-light">Seleccionar</a>
@@ -246,7 +242,7 @@ export const PAGINA = () => {
                     </div>
                 </div>
             </section>
-            <section class="ingredients-section text-center py-5 bg-darkdark">
+            <section  id="contacto" class="ingredients-section text-center py-5 bg-darkdark">
                 <div class="containerr">
                     <h3 class="mb-4">¡Contáctanos!</h3>
                     <p class="lead mb-5 text-white">

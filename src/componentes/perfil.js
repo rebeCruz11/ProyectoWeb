@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { HEADER } from './header';
+import { HEADERAPP } from './headerApp';
 import { Footer } from './footer';
 import './perfil.css';
 import agregar from './images/boton-agregar.png';
@@ -89,7 +89,7 @@ export const PERFIL = () => {
 
     return (
         <div>
-            <HEADER />
+            <HEADERAPP />
             <div className='espacio'></div>
             <div className='perfil-container'>
                 {/* Sección Izquierda - Foto de perfil y Datos del Usuario */}

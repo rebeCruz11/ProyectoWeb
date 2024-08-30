@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap');
+
+.tarjeta-container {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom, #000000, #3f1d13, #e74d06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta-card {
+    width: 500px;
+    height: 300px;
+    color: #fff;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.tarjeta-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.tarjeta-front {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, #e26024, #000000);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: 1;
+    backface-visibility: hidden;
+}
+
+.tarjeta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tarjeta-imput{
+    background-color: transparent;
+        border: none;
+        outline: none;
+}
+
+.tarjeta-map-img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.tarjeta-card-no {
+    font-size: 30px;
+    margin-top: 8px;
+}
+
+.tarjeta-card-holder {
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.tarjeta-name {
+    font-size: 20px;
+}
+
+
+
+
+
+
+/*
+.tarjeta-card:hover .tarjeta-card-inner {
+    transform: rotateY(-180deg);
+}
+    */
