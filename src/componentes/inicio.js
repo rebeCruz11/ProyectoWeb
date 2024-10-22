@@ -174,72 +174,57 @@ export const PAGINA = () => {
                     </div>
                 </div>
             </section>
-            <section id="planes" class="ingredients-section text-center py-5 bg-darkdark text-white">
-                <div class="container pricing-table ">
-                    <div class="row text-center">
-                        <h3 class="mb-5">Nuestros planes</h3>
+            <section id="planes">
+                <div class="container">
+                    <div class="row text-center mt-5">
+                        <h3 class="mb-5 text-white">Nuestros planes</h3>
                     </div>
-                    <div class="row bg-darkdark">
-                        <div class="col-lg-3 col-md-6 mb-4 ">
-                            <div class="card pricing-card ">
-                                <div class="card-header bg-dark text-white">
-                                    BASICO
-                                </div>
-                                <div class="card-body bg-difuminado text-white">
-                                    <p class="price">$9.99<span><br/>/mes</span></p>
-                                    <div class="p-5">
-                                    <a href="#" class="btn btn-outline-light">Seleccionar</a>
-
-                                    </div>
-                                </div>
+                    <h1 class="text-center my-4">Elige Tu Plan</h1>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="plan-container">
+                                <div class="plan-title">PLAN Black</div>
+                                <div class="plan-row">Área de peso libre, peso integrado, cardio y clases grupales <span class="check-icon">✔</span></div>
+                                <div class="plan-row">Acceso a todas las áreas del gimnasio <span class="check-icon">✔</span></div>
+                                <div class="plan-row">Smart Fit App <span class="check-icon">✔</span></div>
+                                <div class="plan-row">Smart Fit Go <span class="check-icon">✔</span></div>
+                                <div class="plan-row">Invita a entrenar un amigo 5 veces al mes <span class="check-icon">✔</span></div>
+                                <div class="plan-row">Acceso al Smart Spa <span class="check-icon">✔</span></div>
+                                <div class="plan-row">Sin cargo de cancelación <span class="check-icon">✔</span></div>
+                                <div class="plan-row text-center plan-price">$25.99 + IVA / mes</div>
                             </div>
                         </div>
-
-                        <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="card pricing-card">
-                                <div class="card-header bg-dark text-white">
-                                    PREMIUM
-                                </div>
-                                <div class="card-body bg-difuminado text-white">
-                                    <p class="price">$19.99<span><br/>/mes</span></p>
-                                    <div class="p-5">
-                                    <a href="#" class="btn btn-outline-light">Seleccionar</a>
-
-                                    </div>
-                                </div>
+                        <div class="col-md-4">
+                            <div class="plan-container">
+                                <div class="plan-title">PLAN Fit</div>
+                                <div class="plan-row">Área de peso libre, peso integrado, cardio y clases grupales <span class="check-icon">✔</span></div>
+                                <div class="plan-row">Acceso a todas las áreas del gimnasio <span class="check-icon">✔</span></div>
+                                <div class="plan-row">Smart Fit App <span class="check-icon">✔</span></div>
+                                <div class="plan-row">Smart Fit Go <span class="x-icon">✘</span></div>
+                                <div class="plan-row">Invita a entrenar un amigo 5 veces al mes <span class="x-icon">✘</span></div>
+                                <div class="plan-row">Acceso al Smart Spa <span class="x-icon">✘</span></div>
+                                <div class="plan-row">Sin cargo de cancelación <span class="check-icon">✔</span></div>
+                                <div class="plan-row text-center plan-price">$18.49 + IVA / mes</div>
                             </div>
                         </div>
-
-                        <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="card pricing-card">
-                                <div class="card-header bg-dark text-white">
-                                    PRO
-                                </div>
-                                <div class="card-body bg-difuminado text-white">
-                                    <p class="price">$29.99<span><br/>/mes</span></p>
-                                    <div class="p-5">
-                                    <a href="#" class="btn btn-outline-light">Seleccionar</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="card pricing-card">
-                                <div class="card-header bg-dark text-white">
-                                    ULTRA
-                                </div>
-                                <div class="card-body bg-difuminado text-white">
-                                    <p class="price">$39.99<span><br/>/mes</span></p>
-                                    <div class="p-5">
-                                    <a href="#" class="btn btn-outline-light">Seleccionar</a>
-
-                                    </div>
-                                </div>
+                        <div class="col-md-4">
+                            <div class="plan-container">
+                                <div class="plan-title">PLAN Smart</div>
+                                <div class="plan-row">Área de peso libre, peso integrado, cardio y clases grupales <span class="check-icon">✔</span></div>
+                                <div class="plan-row">Acceso a todas las áreas del gimnasio <span class="check-icon">✔</span></div>
+                                <div class="plan-row">Smart Fit App <span class="check-icon">✔</span></div>
+                                <div class="plan-row">Smart Fit Go <span class="x-icon">✘</span></div>
+                                <div class="plan-row">Invita a entrenar un amigo 5 veces al mes <span class="x-icon">✘</span></div>
+                                <div class="plan-row">Acceso al Smart Spa <span class="x-icon">✘</span></div>
+                                <div class="plan-row">Sin cargo de cancelación <span class="check-icon">✔</span></div>
+                                <div class="plan-row text-center plan-price">$19.99 + IVA / mes</div>
                             </div>
                         </div>
                     </div>
+                    <Link to="/plans" style={{width: "90%", margin:"60px" }} class="btn btn-outline-light ">
+                                Seleccionar
+                            </Link>
+
                 </div>
             </section>
             <section  id="contacto" class="ingredients-section text-center py-5 bg-darkdark">

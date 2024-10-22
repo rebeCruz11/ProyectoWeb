@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 import { HEADERAPP } from './headerApp';
 import { Footer } from './footer';
 import './perfil.css';
@@ -15,22 +17,49 @@ export const PERFIL = () => {
     const [profilePicture, setProfilePicture] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
     const [userInfo, setUserInfo] = useState({
-        name: 'Nombre del Usuario',
-        weight: '70 kg',
-        targetWeight: '65 kg',
-        age: '28 años',
-        height: '175 cm'
+        name: '',
+        weight: '',
+        targetWeight: '',
+        age: '',
+        height: ''
     });
 
     const [editForm, setEditForm] = useState(userInfo);
     const [showRoutineEditButtons, setShowRoutineEditButtons] = useState(false);
-    const [rutinas, setRutinas] = useState([
-        { title: 'Rutina de Cardio', progress: 15 },
-        { title: 'Ejercicios G.A.P', progress: 15 }
-    ]);
+    const [rutinas, setRutinas] = useState([]);
 
     const [showModal, setShowModal] = useState(false);
     const [rutinaEditada, setRutinaEditada] = useState(null);
+    const userId = 1; // Aquí puedes pasar el `id` del usuario logueado
+
+    // Cargar datos del perfil del usuario cuando el componente se monta
+    useEffect(() => {
+        axios.get(`/api/perfil/${userId}`)
+            .then(response => {
+                if (response.data) {
+                    const { nombre, peso, objetivo_peso, edad, altura, foto } = response.data;
+                    setUserInfo({
+                        name: nombre || 'Nombre del Usuario',
+                        weight: `${peso} kg`,
+                        targetWeight: `${objetivo_peso} kg`,
+                        age: `${edad} años`,
+                        height: `${altura} cm`
+                    });
+                    setProfilePicture(foto || null);
+                    setEditForm({
+                        name: nombre || 'Nombre del Usuario',
+                        weight: `${peso} kg`,
+                        targetWeight: `${objetivo_peso} kg`,
+                        age: `${edad} años`,
+                        height: `${altura} cm`
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("Error al cargar el perfil del usuario:", error);
+                Swal.fire('Error', 'Hubo un problema al cargar los datos del perfil.', 'error');
+            });
+    }, [userId]);
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
@@ -57,9 +86,26 @@ export const PERFIL = () => {
     };
 
     const handleSave = () => {
-        setUserInfo(editForm);
-        setIsEditing(false);
-        setShowRoutineEditButtons(false);
+        const updatedProfile = {
+            nombre: editForm.name,
+            peso: editForm.weight.replace(' kg', ''),
+            objetivo_peso: editForm.targetWeight.replace(' kg', ''),
+            edad: editForm.age.replace(' años', ''),
+            altura: editForm.height.replace(' cm', ''),
+            foto: profilePicture
+        };
+
+        axios.put(`/api/perfil/${userId}`, updatedProfile)
+            .then(() => {
+                setUserInfo(editForm);
+                setIsEditing(false);
+                setShowRoutineEditButtons(false);
+                Swal.fire('Éxito', 'Los datos del perfil se han actualizado correctamente.', 'success');
+            })
+            .catch(error => {
+                console.error("Error al guardar el perfil:", error);
+                Swal.fire('Error', 'Hubo un problema al guardar los datos del perfil.', 'error');
+            });
     };
 
     const handleAddRutina = (nuevaRutina) => {
@@ -202,50 +248,57 @@ export const PERFIL = () => {
                         <div className='plan-small-card py-5 plan-ejercicios'>
                             <h5 className='plan-title'>Plan de Ejercicios</h5>
                             <p className='plan-price'><strong>Precio:</strong> $150</p>
-                            <p className='plan-description'><strong>Descripción:</strong> Un plan completo para mejorar tu fuerza y resistencia, con entrenamientos adaptados a tus necesidades.</p>
-                            <p className='plan-duration'><strong>Duración:</strong> 3 meses</p>
+                            <div className='benefits'>
+                                <p><strong>Beneficios:</strong></p>
+                                <ul>
+                                    <li>Mejora la condición física</li>
+                                    <li>Tonificación muscular</li>
+                                    <li>Pérdida de peso</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div className='receta-small-card py-5 receta'>
-                            <h5 className='receta-name'>Ensalada de Quinoa</h5>
-                            <p className='receta-description'>Una ensalada fresca y nutritiva rica en proteínas y fibra.</p>
-                            <button className='receta-button'>Ver</button>
+
+                        <div className='plan-small-card py-5 plan-nutricion'>
+                            <h5 className='plan-title'>Plan de Nutrición</h5>
+                            <p className='plan-price'><strong>Precio:</strong> $90</p>
+                            <div className='benefits'>
+                                <p><strong>Beneficios:</strong></p>
+                                <ul>
+                                    <li>Pérdida de peso</li>
+                                    <li>Salud cardiovascular</li>
+                                    <li>Alimentación equilibrada</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Sección Derecha - Submenú */}
-                <div className='submenu-section'>
-                    <div className='submenu-boton'>
-                        <button className='agregar-submenu-button' onClick={handleModalShow}>
-                            <img className="agregar" src={agregar} alt="Agregar" />
-
+                <div className='right-section'>
+                    <div className='info-section'>
+                        <div className='icon-buttons'>
+                            <button className='icon-button'>
+                                <img src={configuracion} alt="configuración" onClick={handleConfigClick} />
+                            </button>
+                            <button className='icon-button'>
+                                <img src={notificacion} alt="notificación" />
+                            </button>
+                        </div>
+                        <button className='edit-rutina-button' onClick={handleModalShow}>
+                            <img className="boton-agregar-rutina" src={agregar} alt="Agregar rutina" />
                         </button>
-                        <h1>Agregar</h1>
-                    </div>
-                    <div className='submenu-boton'>
-                        <button className='configuracion-submenu-button' onClick={handleConfigClick}>
-                            <img className="configuracion" src={configuracion} alt="Configuración" />
-
-                        </button>
-                        <h1>Configuracion</h1>
-                    </div>
-                    <div className='submenu-boton'>
-                        <button className='notificacion-submenu-button'>
-                            <img className="noti" src={notificacion} alt="Notificación" />
-
-                        </button>
-                        <h1>Notificaciones</h1>
                     </div>
                 </div>
             </div>
 
-            {/* Modal para Agregar/Editar Rutina */}
-            <AgregarRutina
-                show={showModal}
-                handleClose={handleModalClose}
-                onSaveRutina={handleSaveRutina}
-                rutinaEditada={rutinaEditada}
-            />
+            {/* Modal para agregar o editar rutinas */}
+            <Modal show={showModal} onHide={handleModalClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>{rutinaEditada ? 'Editar Rutina' : 'Agregar Rutina'}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <AgregarRutina onSave={handleSaveRutina} rutina={rutinaEditada} />
+                </Modal.Body>
+            </Modal>
 
             <Footer />
         </div>

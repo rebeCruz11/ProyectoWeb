@@ -179,3 +179,46 @@ color: #f95b14 ;
     border: 2px solid #FF4500;
 }
 
+/*iventos*/
+
+.plan-container {
+    padding: 90px;
+    border: 2px solid #FF4500;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 40px 0;
+    background-color: #111;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color:white;
+}
+.plan-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.2);
+}
+.plan-title {
+    color:#FF4500;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.plan-row {
+    margin: 13px;
+    padding: 10px 0;
+    border-bottom: 1px solid#FF4500;
+}
+.plan-row:last-child {
+    border-bottom: none;
+}
+.plan-price {
+    font-size: 20px;
+    color: #FF4500;
+}
+.check-icon {
+    color: #00FF00;
+}
+.x-icon {
+    color: #FF0000;
+}
+

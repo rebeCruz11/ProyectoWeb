@@ -1,0 +1,150 @@
+/* Reset básico */
+body {
+
+}
+
+.page-container {
+    font-family: 'Poppins', sans-serif;
+    background: black;
+    color: white;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 90px;
+    top: 100%;
+}
+
+/* Efecto en plan-card */
+.plan-card {
+    border: 2px solid #FF4500;
+    padding: 25px;
+    background-color: #0a0a0a;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative; /* Para facilitar el posicionamiento del checkbox */
+    margin: 10px;
+}
+
+.plan-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    background-color: #2c2c2c;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.plan-card h2 {
+    color: #FF4500;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.plan-card p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+    line-height: 1.5; /* Para mejor espaciado */
+}
+
+.plan-card p strong {
+    color: #FF4500; /* Para resaltar precios o detalles importantes */
+}
+
+/* Estilizando el checkbox */
+.plan-card input[type="checkbox"] {
+    appearance: none; /* Remueve el estilo predeterminado del checkbox */
+    width: 5px;
+    height: 5px;
+    border: 2px solid #FF4500;
+    border-radius: 20px;
+    position: absolute; /* Lo coloca dentro de la tarjeta de forma libre */
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.plan-card input[type="checkbox"]:checked {
+    background-color: #FF4500; /* Color de fondo al seleccionar */
+    border-color: #ff7631;
+}
+
+.plan-card input[type="checkbox"]:checked::before {
+    content: '✓';
+    display: block;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.plan-card p:last-child {
+    font-size: 0.9rem;
+    margin-top: 20px;
+    color: #c7c7c7;
+}
+
+/* Efecto visual extra */
+.plan-card p.important {
+    font-size: 1.1rem;
+    color: #FF4500; /* Resalta las cosas importantes */
+    font-weight: bold;
+}
+
+
+/* Sección de compra */
+.compra-details {
+    padding: 20px;
+    background-color: #0a0a0a;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    bottom: 30px;
+}
+
+.compra-details-header {
+    color: #FF4500;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.buttonCompra {
+    background-color: #FF4500;
+    border: none;
+    padding: 12px 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+    width: 100%;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ff7631;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Detalles de pago */
+.details-pago {
+    margin-top: 30px;
+}
+
+.details-pago h2 {
+    color: #FF4500;
+    font-size: 1.5rem;
+}
+
+.details-pago p {
+    color: #ddd;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .page-container {
+        grid-template-columns: 1fr;
+    }
+}

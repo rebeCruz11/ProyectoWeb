@@ -14,6 +14,8 @@ import Testimonio from './componentes/testimonio';
 import { INICIOAPP } from './componentes/inicioApp';
 import { TARJETA } from './componentes/tarjeta';
 import Comments from './componentes/comentarios';
+import Plans from './componentes/planDetalle';
+import ProfileForm from './componentes/registro';
 
 
 
@@ -34,6 +36,9 @@ function App() {
             <Route path="/inicioApp" element={<INICIOAPP />} />
             <Route path="/pagar" element={<TARJETA />} />
             <Route path="/comentarios" element={<Comments />} />
+            <Route path="/plans" element={< Plans />} />
+            <Route path="/registro" element={<ProfileForm />} />
+
 
 
             {/* Agrega más rutas según sea necesario */}
