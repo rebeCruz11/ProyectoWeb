@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react"; 
 import './rutinas.css';
 import boxing from '../componentes/imgs/boxing.jpg';
 import espalda from '../componentes/imgs/espalda.jpg';
@@ -24,8 +24,110 @@ import mancuernas from '../componentes/imgs/mancuernas.png';
 import { Card, Button, Container } from 'react-bootstrap';
 import { HEADERAPP } from './headerApp.js';
 
-
 const Rutinas = () => {
+  const [rutinas, setRutinas] = useState([]); // Estado para las rutinas
+  const [misRutinas, setMisRutinas] = useState([]);
+
+  // Obtener rutinas desde la API
+  useEffect(() => {
+    fetch('http://localhost:3001/api/rutinas')
+      .then(response => response.json())
+      .then(data => setRutinas(data))
+      .catch(error => console.error('Error fetching rutinas:', error));
+  }, []);
+
+  // Extrae userName y email de localStorage
+  const userName = encodeURIComponent(localStorage.getItem('userName'));
+  const email = encodeURIComponent(localStorage.getItem('email'));
+
+  // Cargar rutinas guardadas del usuario
+  useEffect(() => {
+    fetch(`http://localhost:3001/api/mis-rutinas?userName=${userName}&email=${email}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error al cargar mis rutinas guardadas');
+        }
+        return response.json();
+      })
+      .then(data => setMisRutinas(data))
+      .catch(error => console.error('Error al cargar mis rutinas guardadas:', error));
+  }, [userName, email]);
+
+  // Función para guardar la receta seleccionada
+const guardarRutinaa = (nombre) => {
+  const nombreRutina = encodeURIComponent(nombre); 
+  fetch(`http://localhost:3001/api/guardar-rutinas?userName=${userName}&nombreRutina=${nombreRutina}`)
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Error al guardar la rutina');
+          }
+          return response.json();
+      })
+      .then(() => {
+          // Recargar mis recetas después de guardar una nueva
+          fetch(`http://localhost:3001/api/mis-rutinas?userName=${userName}&email=${email}`)
+              .then(response => {
+                  if (!response.ok) {
+                      throw new Error('Error al cargar mis rutinas guardadas');
+                  }
+                  return response.json();
+              })
+              .then(data => setMisRutinas(data))
+              .catch(error => console.error('Error al cargar mis rutinas guardadas después de guardar:', error));
+      })
+      .catch(error => console.error('Error al guardar la rutinas:', error));
+};
+
+
+  const guardarRutina = (nombre) => {
+    const nombreRutina = encodeURIComponent(nombre); 
+    
+    fetch('http://localhost:3001/api/guardar-rutinas', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userName: userName, nombreRutina: nombreRutina }), // Enviando un objeto JSON
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error al guardar la rutina');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Respuesta del servidor:', data); // Agrega esto para ver la respuesta
+        // Recargar mis rutinas después de guardar una nueva
+        fetch(`http://localhost:3001/api/mis-rutinas?userName=${userName}&email=${email}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error al cargar mis rutinas guardadas');
+                }
+                return response.json();
+            })
+            .then(data => setMisRutinas(data))
+            .catch(error => console.error('Error al cargar mis rutinas guardadas después de guardar:', error));
+    })
+    .catch(error => console.error('Error al guardar la rutina:', error));
+};
+
+
+  // Función para eliminar una rutina guardada
+  // Función para eliminar una rutina guardada
+const eliminarRutina = (id) => {
+  fetch(`http://localhost:3001/api/deleteDishR?id=${id}`, { method: 'DELETE' })
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Error al eliminar la rutina');
+          }
+          return response.json();
+      })
+      .then(() => {
+          setMisRutinas(prevRutinas => prevRutinas.filter(rutina => rutina.id !== id)); // Remover del state
+      })
+      .catch(error => console.error('Error al eliminar la rutina:', error));
+};
+
   return (
     <div className="body-rutinas">
       <HEADERAPP />
@@ -42,65 +144,72 @@ const Rutinas = () => {
           ¡no te arrepentirás!
         </p>
       </div>
-
+      <h2 className="text-center mt-5">Nuestras Rutinas</h2>
+      {/* Mostrar todas las rutinas */}
       <div className="container rutinas">
         <div className="row">
-          <div className="col-6 col-md-3 mb-3">
-            <Card className="card-custom-rutinas">
-              <Card.Img className="card-img-rutinas" variant="top" src={boxing} alt="Boxing" />
-              <Card.Body>
-                <Card.Title className="ajustartitle text-center">Entrenamiento Boxing</Card.Title>
-                <Card.Text className="fs-6 fw-normal">Rutina para practicar boxing y ser el mejor.</Card.Text>
-                <Button variant="dark" href="#" className="btn-custom-rutinas">Vamos!</Button>
-              </Card.Body>
-            </Card>
-          </div>
-
-          <div className="col-6 col-md-3 mb-3">
-            <Card className="card-custom-rutinas">
-              <Card.Img className="card-img-rutinas" variant="top" src={espalda} alt="Espalda" />
-              <Card.Body>
-                <Card.Title className="ajustartitle text-center">Una espalda envidiable</Card.Title>
-                <Card.Text className="fs-6 fw-normal">Rutina para fortalecer la espalda y mejorar la postura.</Card.Text>
-                <Button variant="dark" href="#" className="btn-custom-rutinas">Vamos!</Button>
-              </Card.Body>
-            </Card>
-          </div>
-
-          <div className="col-6 col-md-3 mb-3">
-            <Card className="card-custom-rutinas">
-              <Card.Img className="card-img-rutinas" variant="top" src={runner} alt="Runner" />
-              <Card.Body>
-                <Card.Title className="ajustartitle text-center">Entrena tu resistencia</Card.Title>
-                <Card.Text className="fs-6 fw-normal ">Rutina de entrenamiento para corredores.</Card.Text>
-                <Button variant="dark" href="#" className="btn-custom-rutinas">Vamos!</Button>
-              </Card.Body>
-            </Card>
-          </div>
-
-          <div className="col-6 col-md-3 mb-3">
-            <Card className="card-custom-rutinas">
-              <Card.Img className="card-img-rutinas" variant="top" src={gluteos} alt="Gluteos" />
-              <Card.Body>
-                <Card.Title className="ajustartitle text-center">Entrena tus gluteos</Card.Title>
-                <Card.Text className="fs-6 fw-normal ">Rutina de entrenamiento para hacer crecer tus gluteos.</Card.Text>
-                <Button variant="dark" href="#" className="btn-custom-rutinas">Vamos!</Button>
-              </Card.Body>
-            </Card>
-          </div>
-
-          {/* Repetición de más tarjetas */}
+          {rutinas.length > 0 ? (
+            rutinas.map((rutina) => (
+              <div key={rutina.id} className="col-6 col-md-3 mb-3">
+                <Card className="card-custom-rutinas">
+                  <Card.Img className="card-img-rutinas" variant="top" src={mancuernas} alt="Rutina" />
+                  <Card.Body>
+                    <Card.Title className="ajustartitle text-center text-black">{rutina.nombre}</Card.Title>
+                    <Card.Text className="fs-6 fw-normal">
+                      Descripción: {rutina.descripcion}<br />
+                      Dificultad: {rutina.dificultad}<br />
+                      Duración: {rutina.duracion} semanas<br />
+                      Objetivo: {rutina.objetivo}
+                    </Card.Text>
+                    <Button variant="dark" href="#" onClick={() => guardarRutinaa(rutina.nombre)} className="btn-custom-rutinas">Agregar</Button>
+                  </Card.Body>
+                </Card>
+              </div>
+            ))
+          ) : (
+            <p>Cargando rutinas...</p>
+          )}
         </div>
       </div>
-      <div className="coach1-rutinas">
-          <p className="textoC1-rutinas">
-            Cada cuerpo es único, y cada persona tiene objetivos diferentes. 
-            <br />Por eso, nuestros entrenadores crean planes de entrenamiento totalmente <br /> 
-            personalizados para ti.¡Disfruta de un entrenamiento efectivo y
-            motivador, adaptado a tus necesidades y preferencias!
-          </p>
-          <img src={coach1} alt="Coach1" />
-        </div>
+            {/* Sección adicional con imágenes y otros elementos */}
+            <div className="coach1-rutinas">
+        <p className="textoC1-rutinas">
+          Cada cuerpo es único, y cada persona tiene objetivos diferentes. 
+          <br />Por eso, nuestros entrenadores crean planes de entrenamiento totalmente <br /> 
+          personalizados para ti.¡Disfruta de un entrenamiento efectivo y
+          motivador, adaptado a tus necesidades y preferencias!
+        </p>
+        <img src={coach1} alt="Coach1" />
+      </div>
+          <h2 className="text-center mt-5">Mis Rutinas Guardadas</h2>
+     {/* Mostrar mis rutinas guardadas */}
+     <div className="container rutinas">
+      <div className="row">
+        {misRutinas.length > 0 ? (
+          misRutinas.map((rutina) => (
+            <div key={rutina.usuario_rutina_id} className="col-12 col-sm-6 col-md-4 mb-4">
+              <Card className="card-ancho-personalizado card-custom-rutinas shadow-sm">
+                <Card.Img className="card-img-rutinas" variant="top" src={mancuernas} alt="Rutina Guardada" />
+                <Card.Body style={{ padding: '20px', width:'95%', marginLeft:'2%'}}>
+                  <Card.Title className="ajustartitle text-center text-black" style={{ fontSize: '1rem' }}>
+                    {rutina.nombre}
+                  </Card.Title>
+                  <Card.Text className="fs-6" style={{ fontSize: '0.9rem' }}>
+                    Descripción: {rutina.descripcion}<br />
+                    Dificultad: {rutina.nivel_dificultad}<br />
+                    Duración: {rutina.duracion} semanas<br />
+                    Objetivo: {rutina.objetivo}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </div>
+          ))
+        ) : (
+          <p className="text-center">No has guardado ninguna rutina.</p>
+        )}
+      </div>
+    </div>
+
 
       <div className="contenedor3-rutinas">
         <img className="mancuernas" src={hombreCorriendo} alt="Mancuernas" />
@@ -127,7 +236,7 @@ const Rutinas = () => {
             <div className="contenedor2-rutinas">
               <img className="iconos-rutinas" src={huesos} alt="Huesos" />
             </div>
-            <p>Fortalece tu huesos</p>
+            <p>Fortalece tus huesos</p>
           </div>
 
           <div className="contenedor22-rutinas">
@@ -139,41 +248,6 @@ const Rutinas = () => {
         </div>
 
         <img className="img-fluid" style={{ objectFit: 'cover', height: '200px', width: '200px', marginTop:'15%', marginLeft:'15%' }} src={mancuernas} alt="Mancuernas" />
-      </div>
-
-      {/* --------------------------------------------------------------------------------------------*/}
-
-      <div className="container mt-5">
-        <h2 className="text-uppercase text-center mb-4" style={{ color: '#fffdf8' }}>
-          Tus rutinas del <span style={{ color: '#95938f' }}>Gym</span>
-        </h2>
-        <div className="row justify-content-center">
-
-          {/* Primera Fila */}
-          <div className="col-lg-5 col-md-6 mb-4 d-flex justify-content-center">
-            <div className="card" style={{ backgroundColor: '#f95b14', border: 'none', width: '400px', height: '550px' }}>
-              <img src={gluteos} className="card-img-top" alt="Cardio Classes" />
-              <div className="card-body text-center">
-                <h5 className="card-title" style={{ color: '#656461' }}>Cardio Classes</h5>
-                <p className="card-text">Continua con tu ejercicio del dia </p>
-                <p><strong>12.00 AM - 2.00 PM</strong></p>
-                <a href="#" className="btn btn-dark">Continuar</a>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-5 col-md-6 mb-4 d-flex justify-content-center">
-            <div className="card" style={{ backgroundColor: '#f95b14', border: 'none', width: '400px', height: '550px' }}>
-              <img src={espalda} className="card-img-top" alt="Espalda Classes" />
-              <div className="card-body text-center">
-                <h5 className="card-title" style={{ color: '#656461' }}>Espalda Classes</h5>
-                <p className="card-text">Continua con tu ejercicio del dia </p>
-                <p><strong>2.00 AM - 3.00 PM</strong></p>
-                <a href="#" className="btn btn-dark">Continuar</a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       <Footer />

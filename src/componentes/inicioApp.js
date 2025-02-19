@@ -16,6 +16,7 @@ import gym from './images/girl3.png';
 import gym2 from './images/xd1.jpg';
 import logo from './images/girl4.png';
 
+const userName = encodeURIComponent(localStorage.getItem('userName'));
 
 export const INICIOAPP = () => {
     return (
@@ -62,7 +63,7 @@ export const INICIOAPP = () => {
             </div>
             <div className="container p-5 mt-5 bg-darkdark">
             <div className="welcome-box p-4 mb-4">
-                    <h1 className='text-white'>Bienvenido a Elite Fitness</h1>
+                    <h1 className='text-white'>Bienvenido a Elite Fitness {userName}</h1>
                 </div>
                 <div className="search-box mb-4">
                     <input

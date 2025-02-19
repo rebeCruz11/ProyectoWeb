@@ -28,11 +28,11 @@ return (
         {/* Sección de planes */}
             <div className="plan-details">
             <div className="plan-card">
-                <h2>PLAN FIT</h2>
+                <h2>PLAN ELIT</h2>
                 <p>Inscripción: $3.99 + IVA</p>
                 <p>Mantenimiento: $39.00/año + IVA</p>
                 <p>Fidelidad: 12 meses</p>
-                <p>$18.49 + IVA</p>
+                <p>$25.99 + IVA</p>
                 <p>Entra en la sede seleccionada sin restricción de horario.</p>
                 <input type="checkbox" />
                 </div>
@@ -49,7 +49,7 @@ return (
                 </div>
 
                 <div className="plan-card">
-                <h2>PLAN SMART</h2>
+                <h2>PLAN LITE</h2>
                 <p>Inscripción: $5.99 + IVA</p>
                 <p>Mantenimiento: $39.00/año + IVA</p>
                 <p>Fidelidad: Sin permanencia</p>

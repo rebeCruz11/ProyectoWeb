@@ -1,5 +1,6 @@
+/* Estilos generales */
 .body-rutinas {
-  background-color:  #000000;
+  background-color: #000000;
 }
 
 .banner-container-rutinas {
@@ -20,6 +21,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  display: flex; /* Cambiar a flex para centrar contenido */
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
@@ -39,22 +41,121 @@
   margin-top: 30px;
   font-size: 20px;
   margin-bottom: 60px;
-  margin-left: 33%;
+  text-align: center; /* Centrar el texto */
 }
 
+/* Sección de tarjetas de rutinas */
 .card-custom-rutinas {
   background-color: #f95b14;
-  width: 15rem;
-  height: 26rem;
-  margin-left: 20px;
+  width: 100%; /* Cambiar a 100% */
+  max-width: 350px; /* Limitar el ancho máximo */
+  margin: 15px auto; /* Espaciado uniforme */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  transition: transform 0.2s; /* Transición suave */
+}
+
+.card-custom-rutinas:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
 }
 
 .card-img-rutinas {
-  height: 35%;
-  width: auto;
+  width: 130px; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
+  height: auto; /* Mantiene la proporción de la imagen */
+  max-height: 200px; /* Limita la altura máxima de la imagen */
+  object-fit: cover; /* Asegura que la imagen se recorte en lugar de estirarse */
+  border-radius: 10px 10px 0 0; /* Bordes redondeados para la parte superior */
+  margin-left: 25%;
 }
 
+.card-body {
+  text-align: center; /* Centrar el contenido de la tarjeta */
+}
 
+.card-title {
+  color: #fff; /* Color del texto del título */
+}
+
+.card-text {
+  color: #fff; /* Color del texto de la descripción */
+}
+
+/* Sección de Mis Rutinas Guardadas */
+.container-rutinas-guardadas {
+  padding: 20px 0; /* Espaciado superior e inferior */
+}
+
+h2.text-center {
+  color: #ffffff; /* Color del título */
+  margin-bottom: 20px;
+}
+
+/* Ajustes para las tarjetas de "Mis Rutinas Guardadas" */
+.card-custom-mis-rutinas {
+  background-color: #f95b14; /* Fondo igual al del resto de las tarjetas */
+  width: 100%; /* Ancho del 100% del contenedor */
+  max-width: 350px; /* Ancho máximo de las tarjetas */
+  margin: 15px auto; /* Separación entre las tarjetas */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  transition: transform 0.2s; /* Transición suave al pasar el mouse */
+}
+
+.card-custom-mis-rutinas:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+/* Imagen dentro de la tarjeta */
+.card-custom-mis-rutinas img {
+  width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+  height: auto; /* Mantiene la proporción de la imagen */
+  max-height: 200px; /* Limitar la altura de la imagen */
+  object-fit: cover; /* Asegura que la imagen se recorte y no se distorsione */
+  border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+}
+
+/* Contenido de la tarjeta */
+.card-custom-mis-rutinas .card-body {
+  text-align: center; /* Centrar el contenido de la tarjeta */
+  color: #ffffff; /* Texto en blanco para mayor contraste */
+}
+
+.card-custom-mis-rutinas .card-title {
+  font-size: 18px; /* Tamaño de fuente del título */
+  color: #ffffff; /* Título en blanco */
+  margin-bottom: 10px;
+}
+
+.card-custom-mis-rutinas .card-text {
+  font-size: 14px; /* Tamaño de fuente del texto de la descripción */
+  color: #ffffff; /* Descripción en blanco */
+  margin-bottom: 20px;
+}
+
+/* Botones dentro de las tarjetas */
+.card-custom-mis-rutinas .btn-custom {
+  width: 100%; /* Los botones ocupan todo el ancho de la tarjeta */
+  margin-top: 10px;
+}
+
+.card-custom-mis-rutinas .btn-success {
+  background-color: #28a745; /* Color del botón de Ver Mi Rutina */
+  border: none;
+}
+
+.card-custom-mis-rutinas .btn-danger {
+  background-color: #dc3545; /* Color del botón de Eliminar */
+  border: none;
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 576px) {
+  .card-custom-mis-rutinas {
+    max-width: 100%; /* Tarjetas ocupan todo el ancho de la pantalla en móviles */
+  }
+}
+
+/* Estilos adicionales */
 .coach1-rutinas {
   display: flex;
   justify-content: flex-start;
@@ -146,4 +247,8 @@
   height: 100px;
   width: 100px;
   max-width: 100%;
+}
+.card-ancho-personalizado {
+  width: 100%;  /* Ocupa el 100% de su contenedor */
+  max-width: 500px;  /* Ancho máximo de 300px */
 }
